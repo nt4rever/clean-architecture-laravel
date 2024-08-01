@@ -61,3 +61,21 @@ https://www.conventionalcommits.org/en/v1.0.0/
 ## License
 This project template is open-source and available under the [MIT License](LICENSE). Feel free to use it for your own projects and make any modifications as necessary.
 
+## XDebug Config
+```json
+    // Add config to .vscode/launch.json
+    {
+        "name": "Listen for Xdebug (Docker)",
+        "type": "php",
+        "request": "launch",
+        "port": 9003,
+        "pathMappings": {
+            "/var/www/html": "${workspaceFolder}"
+        },
+        "hostname": "localhost"
+    }
+
+    // Enable these line in .env
+    SAIL_XDEBUG_MODE=develop,debug
+    SAIL_XDEBUG_CONFIG="client_host=host.docker.internal idekey=VSCODE"
+```
